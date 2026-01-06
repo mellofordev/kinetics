@@ -1,0 +1,5 @@
+# Cloudflare Pages routing configuration
+# Pre-rendered pages are served first
+# Fallback to SPA for client-side routing
+
+/*    /index.html   200

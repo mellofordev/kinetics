@@ -8,9 +8,9 @@ import { ComponentPage } from '@/routes/component-page'
 // Lazy load MDX content
 type MDXLoader = () => Promise<{ default: React.ComponentType }>
 
-const Introduction: MDXLoader = () => import('./content/docs/introduction.mdx')
-const Installation: MDXLoader = () => import('./content/docs/installation.mdx')
-const ButtonDocs: MDXLoader = () => import('./content/components/button/button.mdx')
+const Introduction: MDXLoader = () => import('@/content/docs/introduction.mdx')
+const Installation: MDXLoader = () => import('@/content/docs/installation.mdx')
+const ButtonDocs: MDXLoader = () => import('@/content/components/button/button.mdx')
 
 // Root route
 const rootRoute = createRootRoute({

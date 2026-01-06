@@ -4,14 +4,18 @@ import { mdxComponents } from '../components/mdx-components'
 
 interface ComponentPageProps {
   loader: () => Promise<{ default: React.ComponentType }>
+  Component?: React.ComponentType  // Pre-loaded component for SSR
 }
 
-export function ComponentPage({ loader }: ComponentPageProps) {
-  const [Component, setComponent] = useState<React.ComponentType | null>(null)
+export function ComponentPage({ loader, Component: PreloadedComponent }: ComponentPageProps) {
+  const [Component, setComponent] = useState<React.ComponentType | null>(PreloadedComponent || null)
 
   useEffect(() => {
-    loader().then((mod) => setComponent(() => mod.default))
-  }, [loader])
+    // Only load if not pre-loaded (for client-side navigation)
+    if (!PreloadedComponent) {
+      loader().then((mod) => setComponent(() => mod.default))
+    }
+  }, [loader, PreloadedComponent])
 
   if (!Component) {
     return (

@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "bun run registry:build && tsc -b && vite build",
+    "build": "bun run registry:build && tsc -b && vite build && bun run prerender",
     "lint": "eslint .",
     "preview": "vite preview",
-    "registry:build": "bun scripts/generate-registry.ts"
+    "registry:build": "bun scripts/generate-registry.ts",
+    "prerender": "bun scripts/prerender.tsx"
   },
   "dependencies": {
     "@mdx-js/react": "^3.1.1",
