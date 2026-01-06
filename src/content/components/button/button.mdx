@@ -1,0 +1,130 @@
+import { Button } from '@registry/learnui/button'
+
+# Button
+
+A button component with multiple variants and sizes.
+
+## Installation
+
+```bash
+npx shadcn@latest add http://localhost:3001/r/button.json
+```
+
+## Usage
+
+```tsx
+import { Button } from "@/components/ui/button"
+
+export function Example() {
+  return <Button>Click me</Button>
+}
+```
+
+## Preview
+
+<div className="flex flex-wrap gap-4 p-6 border rounded-lg not-prose">
+  <Button>Default</Button>
+  <Button variant="secondary">Secondary</Button>
+  <Button variant="destructive">Destructive</Button>
+  <Button variant="outline">Outline</Button>
+  <Button variant="ghost">Ghost</Button>
+  <Button variant="link">Link</Button>
+</div>
+
+## Variants
+
+### Default
+
+<div className="flex gap-4 p-6 border rounded-lg not-prose">
+  <Button variant="default">Default</Button>
+</div>
+
+```tsx
+<Button variant="default">Default</Button>
+```
+
+### Secondary
+
+<div className="flex gap-4 p-6 border rounded-lg not-prose">
+  <Button variant="secondary">Secondary</Button>
+</div>
+
+```tsx
+<Button variant="secondary">Secondary</Button>
+```
+
+### Destructive
+
+<div className="flex gap-4 p-6 border rounded-lg not-prose">
+  <Button variant="destructive">Destructive</Button>
+</div>
+
+```tsx
+<Button variant="destructive">Destructive</Button>
+```
+
+### Outline
+
+<div className="flex gap-4 p-6 border rounded-lg not-prose">
+  <Button variant="outline">Outline</Button>
+</div>
+
+```tsx
+<Button variant="outline">Outline</Button>
+```
+
+### Ghost
+
+<div className="flex gap-4 p-6 border rounded-lg not-prose">
+  <Button variant="ghost">Ghost</Button>
+</div>
+
+```tsx
+<Button variant="ghost">Ghost</Button>
+```
+
+### Link
+
+<div className="flex gap-4 p-6 border rounded-lg not-prose">
+  <Button variant="link">Link</Button>
+</div>
+
+```tsx
+<Button variant="link">Link</Button>
+```
+
+## Sizes
+
+<div className="flex items-center gap-4 p-6 border rounded-lg not-prose">
+  <Button size="sm">Small</Button>
+  <Button size="default">Default</Button>
+  <Button size="lg">Large</Button>
+</div>
+
+```tsx
+<Button size="sm">Small</Button>
+<Button size="default">Default</Button>
+<Button size="lg">Large</Button>
+```
+
+## Icon Buttons
+
+<div className="flex items-center gap-4 p-6 border rounded-lg not-prose">
+  <Button size="icon-sm">S</Button>
+  <Button size="icon">M</Button>
+  <Button size="icon-lg">L</Button>
+</div>
+
+```tsx
+<Button size="icon-sm">S</Button>
+<Button size="icon">M</Button>
+<Button size="icon-lg">L</Button>
+```
+
+## API Reference
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"default"` | The visual style of the button |
+| `size` | `"default" \| "sm" \| "lg" \| "icon" \| "icon-sm" \| "icon-lg"` | `"default"` | The size of the button |
+| `asChild` | `boolean` | `false` | Render as a child component using Radix Slot |

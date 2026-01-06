@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "kinetics",
+  "homepage": "https://kinetics.prepare.site",
+  "items": [
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "A customizable button component with multiple variants and sizes",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "learnui/button.tsx",
+          "type": "registry:learnui"
+        }
+      ]
+    }
+  ]
+}

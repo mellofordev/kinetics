@@ -1,0 +1,82 @@
+# Installation
+
+How to install and configure Kinetics components in your project.
+
+## Requirements
+
+- React 18+
+- Tailwind CSS 3.4+
+- TypeScript (recommended)
+
+## Setup Tailwind CSS
+
+If you haven't already, set up Tailwind CSS in your project:
+
+```bash
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+## Configure CSS Variables
+
+Add the following CSS variables to your globals.css:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+}
+```
+
+## Add Utils
+
+Install the utility function used by components:
+
+```bash
+npx shadcn@latest add https://kinetics.dev/r/utils.json
+```
+
+Or manually create `lib/utils.ts`:
+
+```typescript
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+```
+
+## Install Dependencies
+
+```bash
+npm install clsx tailwind-merge class-variance-authority
+```
+
+## Add Components
+
+Now you can add any component:
+
+```bash
+npx shadcn@latest add https://kinetics.dev/r/button.json
+```
