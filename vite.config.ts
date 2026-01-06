@@ -8,6 +8,9 @@ import remarkGfm from 'remark-gfm'
 
 // https://vite.dev/config/
 export default defineConfig({
+  build:{
+    outDir:'dist'
+  },
   plugins: [
     {
       enforce: 'pre',
